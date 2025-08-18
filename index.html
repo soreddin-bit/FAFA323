@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Game Predictor - India</title>
+  <meta name="description" content="AI-assisted tips for Aviator, Mines & Penalty. Get started with your 1xBet account in India."/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .console-box { font-family: monospace; background-color: #1a1a1a; padding: 1rem; border-radius: 0.75rem; box-shadow: 0 0 20px #00ff88; color: #00ff88; height: 250px; overflow-y: auto; }
+    .loading-screen { font-family: monospace; background: #000; color: #00ff88; display: flex; align-items: center; justify-content: center; height: 100vh; flex-direction: column; z-index: 50; position: fixed; inset: 0; }
+    .hidden-screen { display: none; }
+    .backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+  <!-- Loading -->
+  <div id="loading" class="loading-screen" role="status" aria-live="polite">
+    <p class="animate-pulse">Loading... Preparing your dashboard</p>
+  </div>
+
+  <!-- Main -->
+  <div id="mainContent" class="hidden-screen">
+    <header class="w-full bg-gray-800/80 backdrop-blur p-4 flex justify-between items-center sticky top-0 z-40">
+      <h1 class="text-xl font-bold text-green-400">1xBet AI Predictor</h1>
+      <nav class="space-x-4 text-sm">
+        <a href="#how" class="hover:text-green-400">How It Works</a>
+        <a href="#games" class="hover:text-green-400">Games</a>
+        <a href="#start" class="hover:text-green-400">Get Started</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-4 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-6">Boost Your Wins with AI Predictions</h2>
+      <p class="max-w-xl mb-8 text-gray-300">Join players in India using smart signals for Aviator, Mines, and Penalty. Real‑time alerts and fast decision support.</p>
+      <div class="flex gap-3">
+        <button id="startButton" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl text-lg transition focus:outline-none focus:ring-2 focus:ring-green-400">Get Started Now</button>
+        <a href="#how" class="border border-green-500 text-green-400 hover:bg-green-500 hover:text-black font-semibold py-3 px-6 rounded-xl text-lg transition">Learn More</a>
+      </div>
+      <p class="mt-4 text-xs text-gray-400">Not affiliated with 1xBet. Use responsibly.</p>
+    </section>
+
+    <!-- Earners -->
+    <section class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">Recent Sample Payouts (INR)</h3>
+      <div class="grid md:grid-cols-2 gap-4 text-left max-w-4xl mx-auto text-sm text-green-300">
+        <p>👤 User ID: 1218473422 – ₹ 350,000</p>
+        <p>👤 User ID: 9912384741 – ₹ 298,000</p>
+        <p>👤 User ID: 3099234822 – ₹ 245,000</p>
+        <p>👤 User ID: 1187339121 – ₹ 200,000</p>
+        <p>👤 User ID: 4412900113 – ₹ 175,000</p>
+        <p>👤 User ID: 8283721091 – ₹ 150,000</p>
+        <p>👤 User ID: 7751937742 – ₹ 120,000</p>
+        <p>👤 User ID: 5554921811 – ₹ 98,000</p>
+        <p>👤 User ID: 1983238742 – ₹ 82,000</p>
+        <p>👤 User ID: 3377749301 – ₹ 75,000</p>
+      </div>
+      <p class="text-xs text-gray-400 mt-4">Figures are illustrative; results vary. Play responsibly.</p>
+    </section>
+
+    <!-- Games -->
+    <section id="games" class="bg-gray-800 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">Supported Games</h3>
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">🎮 Aviator</h4>
+          <p class="text-gray-300">Predict when to cash out before the plane flies away. Pattern‑based alerts.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">💣 Mines</h4>
+          <p class="text-gray-300">Avoid bombs, collect wins. Risk‑aware path suggestions.</p>
+        </div>
+        <div class="bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h4 class="text-xl font-bold mb-2">🥅 Penalty</h4>
+          <p class="text-gray-300">Beat the keeper with data‑driven hints.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="bg-gray-900 py-12 px-6 text-center">
+      <h3 class="text-2xl font-bold text-green-400 mb-6">How It Works</h3>
+      <div class="max-w-3xl mx-auto space-y-4 text-gray-300">
+        <p>📡 AI monitors live signals and historical outcomes.</p>
+        <p>💡 It surfaces patterns to support faster decisions.</p>
+        <p>📲 You receive alerts on your device at key moments.</p>
+      </div>
+    </section>
+
+    <!-- Console -->
+    <section class="bg-black py-12 px-6 text-center">
+      <h3 class="text-xl font-bold text-green-400 mb-4">[ Console Monitor Log ]</h3>
+      <div class="console-box max-w-3xl mx-auto text-left" id="console" aria-live="polite">
+        <p>[INFO] Predictor service active ✅</p>
+      </div>
+    </section>
+
+    <footer class="text-center text-gray-500 text-sm py-6">
+      © 2025 AI Predictor. Not affiliated with 1xBet. Use responsibly.
+    </footer>
+  </div>
+
+  <!-- Modal: Start / ID Validation -->
+  <div id="modalBackdrop" class="hidden-screen backdrop z-50"></div>
+  <div id="startModal" class="hidden-screen fixed inset-0 z-50 grid place-items-center p-4">
+    <div class="bg-gray-800 w-full max-w-md rounded-2xl p-6 shadow-xl">
+      <div class="flex items-start justify-between mb-4">
+        <h3 class="text-lg font-bold text-green-400">Connect Your 1xBet Account</h3>
+        <button id="closeModal" class="text-gray-400 hover:text-white" aria-label="Close">✕</button>
+      </div>
+      <form id="idForm" class="space-y-4" novalidate>
+        <div>
+          <label for="betId" class="block text-sm text-gray-300 mb-1">1xBet ID (must start with 134)</label>
+          <input id="betId" name="betId" inputmode="numeric" pattern="^134\d+$" placeholder="e.g. 1341234567" class="w-full rounded-lg bg-gray-700 border border-gray-600 focus:border-green-400 focus:ring-1 focus:ring-green-400 px-3 py-2" required />
+          <p id="betIdError" class="hidden text-red-400 text-xs mt-1">ID must be digits and start with 134.</p>
+        </div>
+        <div>
+          <label for="amount" class="block text-sm text-gray-300 mb-1">Deposit Amount (INR)</label>
+          <input id="amount" name="amount" inputmode="numeric" placeholder="e.g. 1000" class="w-full rounded-lg bg-gray-700 border border-gray-600 focus:border-green-400 focus:ring-1 focus:ring-green-400 px-3 py-2" required />
+          <p id="amountError" class="hidden text-red-400 text-xs mt-1">Enter a valid amount (minimum ₹1000).</p>
+        </div>
+        <div class="flex items-center justify-between">
+          <p class="text-sm text-yellow-300">Promo code: <strong>FAFA323</strong></p>
+          <a class="text-sm underline text-green-300 hover:text-green-200" href="https://refpa277512.top/L?tag=d_4481731m_2895c_abl&site=4481731&ad=2895&r=registration" target="_blank" rel="noopener">Register on 1xBet</a>
+        </div>
+        <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-2.5 rounded-xl transition">Verify & Continue</button>
+      </form>
+      <div id="errorBox" class="hidden bg-red-600/80 p-4 rounded-xl mt-4">
+        <h4 class="text-lg font-bold mb-1">⚠️ Account Not Found</h4>
+        <p class="text-sm mb-3">It looks like you're not registered or your ID format is invalid. Please create a new 1xBet account and deposit funds to unlock prediction access.</p>
+        <a href="https://refpa277512.top/L?tag=d_4481731m_2895c_abl&site=4481731&ad=2895&r=registration" target="_blank" class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg transition">Register Now on 1xBet</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simpler loading
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden-screen');
+        document.getElementById('mainContent').classList.remove('hidden-screen');
+      }, 800);
+    });
+
+    // Console ticker
+    const consoleEl = document.getElementById('console');
+    const lines = [
+      '[INFO] Syncing historical outcomes…',
+      '[INFO] Live feed connected (IN region)',
+      '[INFO] Risk controls: ON',
+      '[INFO] Aviator pattern module warmed',
+      '[INFO] Mines grid sampler ready',
+      '[INFO] Penalty model calibrated',
+    ];
+    let i = 0;
+    setInterval(() => {
+      if (!consoleEl) return;
+      const p = document.createElement('p');
+      const now = new Date().toLocaleTimeString();
+      p.textContent = `[${now}] ${lines[i % lines.length]}`;
+      consoleEl.appendChild(p);
+      consoleEl.scrollTop = consoleEl.scrollHeight;
+      i++;
+    }, 2000);
+
+    // Modal controls
+    const startBtn = document.getElementById('startButton');
+    const modal = document.getElementById('startModal');
+    const backdrop = document.getElementById('modalBackdrop');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    function openModal(){ modal.classList.remove('hidden-screen'); backdrop.classList.remove('hidden-screen'); }
+    function closeModal(){ modal.classList.add('hidden-screen'); backdrop.classList.add('hidden-screen'); }
+
+    startBtn?.addEventListener('click', openModal);
+    closeModalBtn?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal();});
+
+    // Form validation (ID must start with 134)
+    const idForm = document.getElementById('idForm');
+    const betId = document.getElementById('betId');
+    const betIdError = document.getElementById('betIdError');
+    const amount = document.getElementById('amount');
+    const amountError = document.getElementById('amountError');
+
+    idForm?.addEventListener('submit',(e)=>{
+      e.preventDefault();
+      let valid = true;
+
+      if(!/^134\d+$/.test(betId.value)){
+        betIdError.classList.remove('hidden');
+        valid = false;
+      } else { betIdError.classList.add('hidden'); }
+
+      if(isNaN(amount.value) || parseInt(amount.value)<1000){
+        amountError.classList.remove('hidden');
+        valid = false;
+      } else { amountError.classList.add('hidden'); }
+
+      if(valid){
+        alert('Account validated. Predictions unlocked!');
+        closeModal();
+      } else {
+        document.getElementById('errorBox').classList.remove('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
